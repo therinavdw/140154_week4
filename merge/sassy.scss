@@ -1,0 +1,74 @@
+$font-stack: Helvetica, sans-serif;
+
+$primary-color : #129844;
+$secondary-color : #5555B7;
+$light-back : #DDEFDD;
+$primary-back : #223422;
+$secondary-back : #222234;
+
+body {
+  font: 100% $font-stack;
+  background-color: $light-back;
+}
+
+h1 {
+  font: 24px $font-stack;
+  color : $primary-color;
+}
+
+h2 {
+  font: 16px $font-stack;
+  color : $primary-color;
+}
+
+h3 {
+  font: 24px $font-stack;
+  color : $secondary-color;
+}
+
+h4 {
+  font: 16px $font-stack;
+  color : $secondary-color;
+}
+
+li {
+  color : $primary-color;
+}
+
+p {
+  color : $secondary-color;
+}
+
+.nav {
+  ul {
+    list-style : none;
+    
+    li {
+      display : inline;
+    }
+  }
+}
+
+@mixin round-corners($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+/*# define mixin called round-corners(name of vairible) parameter/argument. make sure rounded corners are available in all browsers */
+
+.box {
+  padding : 10px;
+}
+
+.rounded-box-info {
+  @include round-corners(10px);
+  background-color : $primary-back;
+}
+/*# look for round-corners and put it in.(argument varlible) sets value of radius vairible to 10 */
+
+.rounded-box-detail {
+  @include round-corners(10px / 2);
+  background-color : $secondary-back;
+}
+/*# do math in sassy 10 devided by 2*/
